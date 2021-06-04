@@ -1,6 +1,10 @@
 import consumer form "./consumer"
 
-const appRoom = consumer.subscriptions.create("RoomChannnel", {
+const appRoom = consumer.subscriptions.create("RoomChannel", {
+  connected() {
+  },
+  disconnected() {
+  },
   received(data) {
     const messages = document.getElementById('messages');
     messages.insertAdjacentHTML('beforeend', data['message']);
